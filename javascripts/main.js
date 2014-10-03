@@ -1,7 +1,7 @@
 
 colors = ["Aqua", "Coral", "Lime", "Red", "Cyan", "DeepPink", "GreenYellow", "Purple", "Yellow"];
 
-speed = 300;
+speed = 500;
 
 function randomColor() {
 	return '#'+(0x1000000+(Math.random()/2 + 0.5)*0xffffff).toString(16).substr(1,6);
@@ -9,7 +9,7 @@ function randomColor() {
 }
 
 (function changeColor() {
-	$("body").stop().animate({backgroundColor: randomColor()}, speed);
+	$("body").css({backgroundColor: randomColor()}, speed);
 	setTimeout(arguments.callee, speed)
 })();
 
